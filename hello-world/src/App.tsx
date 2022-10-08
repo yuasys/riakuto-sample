@@ -1,34 +1,47 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+import { FC } from 'react'
+// import logo from './react.svg'
+import logo from './assets/react.svg'
+
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+const App: FC = () => {
+  // アロー関数を使ってgreetコンポーネントを追加する実験
+  const name = "Nobuhiko Yuasa";
+  const greet = (name: string) => <p>Hello,{name || "Guest"}!</p>
+
+  // ショートサーキット評価の実験
+  const n = Math.floor(Math.random() * 10); //0〜9のランダムな整数
+  const threshold = 5;
+
+  // 繰り返し処理の実験
+  const list = ['Patty', 'Rolley', 'Bobby'];
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <div className='App'>
+
+      {/* greetコンポーネント実験 */}
+      <h2>{greet(name)}</h2>
+
+      {/* シートサーキット評価の実験 */}
+      {n>threshold && (<p>{n}は {threshold} よりも大きい値です</p>)}
+      {n>threshold || (<p>{n}は {threshold} 以下の値です</p>)}
+      {<p>{n} は {n % 2 === 0 ? '偶数' : '奇数'}です</p>}
+
+      {/* 繰り返し処理の実験 */}
+      <ul>
+        {list.map((name) =>(
+          <li>Hello, {name}!</li>
+        ))}
+      </ul>
+
+      <header className='App-header'>
+        <img src={ logo } className="logo" alt="logo" />
+        <h1>Hello world!</h1>
+      </header>
     </div>
-  )
-}
+
+  );
+
+};
 
 export default App
