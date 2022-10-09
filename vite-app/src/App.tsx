@@ -2,6 +2,9 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
 
+const title = import.meta.env.VITE_APP_TITLE
+console.dir(import.meta.env)
+
 function App() {
   const [count, setCount] = useState(0)
 
@@ -13,6 +16,8 @@ function App() {
         </a>
         <a href="https://reactjs.org" target="_blank">
           <img src={reactLogo} className="logo react" alt="React logo" />
+          <p>Hello Vite + React!</p>
+          <p>{title}</p>
         </a>
       </div>
       <h1>Vite + React</h1>
