@@ -17,10 +17,10 @@ function App() {
         <a href="https://reactjs.org" target="_blank">
           <img src={reactLogo} className="logo react" alt="React logo" />
           <p>Hello Vite + React!</p>
-          <p>{title}</p>
+          <h1>{title}</h1>
         </a>
       </div>
-      <h1>Vite + React</h1>
+      <h2>Vite + React</h2>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}

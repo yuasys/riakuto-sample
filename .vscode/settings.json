@@ -1,0 +1,7 @@
+{
+    "eslint.codeActionsOnSave.rules": null,
+    "editor.defaultFormatter": "esbenp.prettier-vscode", 
+    "editor.codeActionsOnSave": { "source.fixAll.eslint": true }, 
+    "editor.formatOnSave": false, "eslint.packageManager": "yarn", 
+    "typescript.enablePromptUseWorkspaceTsdk": true,
+}
